@@ -1,0 +1,16 @@
+Demonstrate practical Ansible skills involving:
+
+Inventory
+SSH connectivity
+Playbooks
+Variables
+Privilege escalation
+Package management
+Services
+Users
+Directories
+File deployment
+Hostnames
+Network configuration
+Patching
+Configuration validation
