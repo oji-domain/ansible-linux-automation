@@ -1,0 +1,17 @@
+Configuration management changes infrastructure administration from:
+
+Login → manually change server → repeat
+
+to:
+
+Define desired state
+        ↓
+Store configuration as code
+        ↓
+Apply consistently
+        ↓
+Validate
+        ↓
+Repeat safely
+
+Good automation improves repeatability, documentation, reviewability, and operational consistency.
