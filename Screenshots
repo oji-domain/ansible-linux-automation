@@ -1,0 +1,6 @@
+01-ansible-version.png
+02-inventory.png 
+03-ping-success.png 
+04-playbook-run.png 
+05-idempotent-second-run.png 
+06-server-validation.png
