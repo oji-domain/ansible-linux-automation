@@ -1,0 +1,84 @@
+USAGE
+
+##Package Installation Playbook
+---
+- name: Install required packages
+  hosts: linux_servers
+  become: true
+
+  tasks:
+    - name: Install packages
+      ansible.builtin.dnf:
+        name:
+          - vim
+          - curl
+          - wget
+        state: present
+
+Run:
+
+ansible-playbook -i inventory/dev.ini playbooks/install_packages.yml
+
+
+##Create Directory
+
+---
+- name: Create application directory
+  hosts: linux_servers
+  become: true
+
+  tasks:
+    - name: Ensure application directory exists
+      ansible.builtin.file:
+        path: /opt/application
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+
+##Manage Service
+
+---
+- name: Configure HTTP service
+  hosts: linux_servers
+  become: true
+
+  tasks:
+    - name: Install Apache
+      ansible.builtin.dnf:
+        name: httpd
+        state: present
+
+    - name: Start Apache
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: true
+
+
+##Server Patching
+
+---
+- name: Patch Linux servers
+  hosts: linux_servers
+  become: true
+  serial: 1
+
+  tasks:
+    - name: Update installed packages
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+
+In production environments, patch procedures should include:
+
+Pre-check
+Backup/Snapshot
+Application owner approval
+Maintenance window
+Patch deployment
+Reboot decision
+Post-check
+Monitoring validation
+Rollback plan
