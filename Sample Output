@@ -1,0 +1,19 @@
+PLAY [Install required packages] ************************
+
+TASK [Gathering Facts] *********************************
+ok: [linux01]
+ok: [linux02]
+
+TASK [Install packages] ********************************
+changed: [linux01]
+changed: [linux02]
+
+PLAY RECAP *********************************************
+linux01 : ok=2 changed=1 unreachable=0 failed=0
+linux02 : ok=2 changed=1 unreachable=0 failed=0
+
+A second execution should ideally show:
+
+changed=0
+
+where no configuration changes are necessary.
