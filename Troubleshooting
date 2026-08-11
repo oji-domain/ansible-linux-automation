@@ -1,0 +1,37 @@
+##UNREACHABLE
+
+Check:
+
+ssh automation@server
+
+Check inventory:
+
+ansible-inventory -i inventory/dev.ini --graph
+
+Run verbose mode:
+
+ansible all -i inventory/dev.ini -m ping -vvv
+
+##Sudo Failure
+
+Confirm:
+
+sudo -l
+
+Use:
+
+become: true
+
+Ensure the account has appropriate sudo permissions.
+
+##YAML Syntax Failure
+
+Check:
+
+ansible-playbook --syntax-check playbook.yml
+
+Then:
+
+ansible-lint playbook.yml
+
+if Ansible Lint is available.
