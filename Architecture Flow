@@ -1,0 +1,38 @@
+              Ansible Control Node
+                       |
+               Inventory File
+                       |
+                  SSH Connections
+                       |
+           +-----------+-----------+
+           |                       |
+       linux01                  linux02
+           |                       |
+      Playbook Applied        Playbook Applied
+           |                       |
+           +-----------+-----------+
+                       |
+                  Validation
+
+Repository:
+
+ansible-linux-automation/
+│
+├── README.md
+├── inventory/
+│   ├── dev.ini
+│   └── production-example.ini
+├── playbooks/
+│   ├── install_packages.yml
+│   ├── create_users.yml
+│   ├── deploy_files.yml
+│   ├── manage_services.yml
+│   ├── change_hostname.yml
+│   └── patch_servers.yml
+├── roles/
+├── group_vars/
+├── host_vars/
+├── templates/
+├── files/
+├── screenshots/
+└── troubleshooting/
