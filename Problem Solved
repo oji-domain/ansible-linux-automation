@@ -1,0 +1,9 @@
+Managing the same configuration manually on many servers produces:
+
+Configuration drift
+Inconsistent changes
+Human errors
+Longer deployment windows
+Difficult rollback processes
+
+Ansible provides centralized, repeatable automation.
